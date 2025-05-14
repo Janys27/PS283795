@@ -19,12 +19,9 @@ param() {
 
 $klucz = "HonMUvojwkmUNJ101etHqjtXlXv3CR27"
 
-$url = "https://api.shodan.io/shodan/host/$IP?key=$klucz"
+$url = "https://api.shodan.io/shodan/host/${IP}?key=$klucz"
 
 $response = Invoke-RestMethod -Uri $url
-
-Write-Host $response
-
 
 Write-Host "IP: $($response.ip_str)"
 Write-Host "Kraj: $($response.country_name)"
