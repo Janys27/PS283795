@@ -12,7 +12,7 @@ arch_path="$backup/$arch_name"
 #dane do logowania
 host="10.0.2.15"
 user="janyskali"
-password="Do2&f6:a(02"
+password="haslo"
 remotedir="/backups"
 
 #tworzymy ten folder jesli nie istnieje
