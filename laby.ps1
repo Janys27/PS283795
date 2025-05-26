@@ -1,0 +1,1 @@
+#komentarz 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
