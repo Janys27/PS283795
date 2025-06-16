@@ -29,8 +29,29 @@ function Get-OSName {
     Write-Output "Operating System: $($os.Caption)"
 }
 
-# Przykład użycia:
-Get-RAMInfo
-Get-DiskUsage
-Get-Hostname
-Get-OSName
+# Funkcja sterująca jak case w bashu
+function Show-SystemInfo {
+    param (
+        [string]$Option
+    )
+
+    switch ($Option.ToLower()) {
+        "ram"      { Get-RAMInfo }
+        "disk"     { Get-DiskUsage }
+        "hostname" { Get-Hostname }
+        "os"       { Get-OSName }
+        "all"      {
+            Get-RAMInfo
+            Get-DiskUsage
+            Get-Hostname
+            Get-OSName
+        }
+        default {
+            Write-Output "Użycie: Show-SystemInfo [ram | disk | hostname | os | all]"
+        }
+    }
+}
+
+# Przykład użycia (dla testu):
+# Show-SystemInfo "ram"
+# Show-SystemInfo "all"
